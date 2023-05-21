@@ -12,3 +12,6 @@ steps:
     - ls /var/run/
     - docker ps
     - docker build -t acesso-atendimento-backend:${DRONE_COMMIT_SHA} .
+trigger:
+  branch:
+    - master
