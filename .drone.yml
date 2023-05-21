@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+
+name: acesso-atendimento-backend
+
+steps:
+
+- name: generate-image
+  image: docker
+  privileged: true
+  commands:
+    - ls /var/run/
+    - docker ps
+    - docker build -t acesso-atendimento-backend:${DRONE_COMMIT_SHA} .
